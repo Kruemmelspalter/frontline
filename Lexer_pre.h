@@ -66,7 +66,7 @@ public:
 		file.close();
 	}
 
-	bool stup(const char* filenamme) {
+	bool stup(const char* filename) {
 		this->filename = filename;
 		file.open(this->filename);
 		if (!file.is_open())

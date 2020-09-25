@@ -2,7 +2,7 @@
 #include <iostream>
 
 int main() {
-	aLexer lexer("C:\\Users\\Fampu\\Desktop\\test.txt");
+	aLexer lexer("test.txt");
 	lexer.run();
 	Lexerpre::ccv to_print = lexer.get_ccv();
 
