@@ -1,7 +1,8 @@
 #include "Lexer.h"
 #include <iostream>
 
-int main() {
+int main()
+{
 	aLexer lexer("test.txt");
 	lexer.run();
 	Lexerpre::ccv to_print = lexer.get_ccv();

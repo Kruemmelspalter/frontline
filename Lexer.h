@@ -7,17 +7,27 @@ class aLexer
 private:
 	Lexerpre lpre;
 	PostLexer pl;
-	const char* filename;
+	const char *filename;
 	Lexerpre::ccv last_ccv;
 	PostLexer::lev last_lev;
+
 public:
-	aLexer(const char* filename) {
+	aLexer(const char *filename)
+	{
 		this->filename = filename;
 	}
 
-	int run() {
-		if (lpre.stup(filename) == true) { system("pause"); return -1; }
-		if (lpre.lex() == -1){ return -1; }
+	int run()
+	{
+		if (lpre.stup(filename) == true)
+		{
+			system("pause");
+			return -1;
+		}
+		if (lpre.lex() == -1)
+		{
+			return -1;
+		}
 
 		pl.post_lex(lpre);
 
@@ -27,11 +37,13 @@ public:
 		return 0;
 	}
 
-	Lexerpre::ccv get_ccv() {
+	Lexerpre::ccv get_ccv()
+	{
 		return last_ccv;
 	}
 
-	PostLexer::lev get_lev() {
+	PostLexer::lev get_lev()
+	{
 		return last_lev;
 	}
 };
